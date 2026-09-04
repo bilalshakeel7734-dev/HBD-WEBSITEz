@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Birthday Gift For Samra ♡</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    #35121f 0%,
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 90%,
+                    #260d18 0%,
+                    transparent 30%
+                ),
+                #080808;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            width: 100%;
+
+            padding: 20px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(8, 8, 8, 0.96);
+
+            border-bottom: 1px solid #3d1726;
+
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ff5c9a;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #dddddd;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff5c9a;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .gift-page {
+            min-height: calc(100vh - 75px);
+
+            padding: 70px 20px;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        .small-title {
+            color: #ff5c9a;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+        .heading {
+            max-width: 750px;
+
+            margin: 0 auto;
+        }
+
+        .heading h1 {
+            color: #ffffff;
+
+            font-size: clamp(43px, 7vw, 72px);
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+        .heading h1 span {
+            color: #ff5c9a;
+        }
+
+        .heading p {
+            color: #b9b9b9;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           GIFT AREA
+        ========================= */
+
+        .gift-area {
+            min-height: 400px;
+
+            margin-top: 35px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 35px;
+        }
+
+
+        /* =========================
+           GIFT BOX
+        ========================= */
+
+        .gift-box {
+            width: 190px;
+
+            height: 170px;
+
+            position: relative;
+
+            cursor: pointer;
+
+            transition: 0.5s;
+
+            filter:
+                drop-shadow(
+                    0 15px 25px rgba(255, 92, 154, 0.18)
+                );
+        }
+
+        .gift-box:hover {
+            transform: translateY(-8px);
+        }
+
+
+        /* BOX BODY */
+
+        .box-body {
+            position: absolute;
+
+            bottom: 0;
+
+            left: 5px;
+
+            width: 180px;
+
+            height: 125px;
+
+            background: #e94d88;
+
+            border-radius: 8px;
+
+            border: 2px solid #ff72a8;
+        }
+
+
+        /* BOX LID */
+
+        .box-lid {
+            position: absolute;
+
+            top: 25px;
+
+            left: -5px;
+
+            width: 200px;
+
+            height: 45px;
+
+            background: #ff5c9a;
+
+            border-radius: 8px;
+
+            border: 2px solid #ff83b0;
+
+            z-index: 3;
+
+            transition: 0.7s ease;
+        }
+
+
+        /* RIBBON */
+
+        .ribbon-vertical {
+            position: absolute;
+
+            width: 32px;
+
+            height: 125px;
+
+            top: 0;
+
+            left: 74px;
+
+            background: #111111;
+
+            z-index: 2;
+        }
+
+        .ribbon-horizontal {
+            position: absolute;
+
+            width: 180px;
+
+            height: 25px;
+
+            top: 50px;
+
+            left: 5px;
+
+            background: #111111;
+
+            z-index: 4;
+        }
+
+
+        /* BOW */
+
+        .bow {
+            position: absolute;
+
+            top: 2px;
+
+            left: 67px;
+
+            width: 55px;
+
+            height: 35px;
+
+            z-index: 5;
+        }
+
+        .bow-left,
+        .bow-right {
+            position: absolute;
+
+            width: 35px;
+
+            height: 27px;
+
+            background: #111111;
+
+            border-radius: 50%;
+        }
+
+        .bow-left {
+            left: 0;
+
+            transform: rotate(-25deg);
+        }
+
+        .bow-right {
+            right: 0;
+
+            transform: rotate(25deg);
+        }
+
+
+        /* =========================
+           OPEN BUTTON
+        ========================= */
+
+        .open-btn {
+            padding: 15px 30px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: #ff4f91;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px rgba(255, 79, 145, 0.22);
+
+            transition: 0.3s;
+        }
+
+        .open-btn:hover {
+            background: #e93f7f;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           OPEN ANIMATION
+        ========================= */
+
+        .gift-box.opened .box-lid {
+            transform:
+                translateY(-75px)
+                rotate(-8deg);
+        }
+
+        .gift-box.opened {
+            transform: translateY(20px);
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .hidden-message {
+            display: none;
+
+            max-width: 680px;
+
+            margin: 20px auto 40px;
+        }
+
+        .hidden-message.show {
+            display: block;
+
+            animation:
+                messageAppear 0.9s ease forwards;
+        }
+
+        @keyframes messageAppear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px)
+                    scale(0.94);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================
+           MESSAGE CARD
+        ========================= */
+
+        .message-card {
+            padding: 45px 35px;
+
+            background: #111111;
+
+            border: 1px solid #542139;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        .heart {
+            font-size: 65px;
+
+            color: #ff5c9a;
+
+            margin-bottom: 12px;
+
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .message-card h2 {
+            color: #ffffff;
+
+            font-size: 34px;
+
+            line-height: 1.3;
+
+            margin-bottom: 22px;
+        }
+
+        .message-card h2 span {
+            color: #ff5c9a;
+        }
+
+        .message-card p {
+            color: #b8b8b8;
+
+            line-height: 1.9;
+
+            margin-bottom: 16px;
+        }
+
+        .final-message {
+            color: #ff5c9a !important;
+
+            font-weight: bold;
+
+            margin-top: 20px;
+        }
+
+        .cake {
+            font-size: 55px;
+
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-btn {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 13px 25px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            color: #ff5c9a;
+
+            background: #111111;
+
+            border: 1px solid #ff5c9a;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ffffff;
+
+            background: #ff5c9a;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .floating-heart {
+            position: fixed;
+
+            bottom: -40px;
+
+            color: #ff5c9a;
+
+            font-size: 24px;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+            animation:
+                floatHeart 8s linear infinite;
+        }
+
+        .floating-heart:nth-child(1) {
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .floating-heart:nth-child(2) {
+            left: 23%;
+            animation-delay: 2s;
+        }
+
+        .floating-heart:nth-child(3) {
+            left: 44%;
+            animation-delay: 4s;
+        }
+
+        .floating-heart:nth-child(4) {
+            left: 63%;
+            animation-delay: 1s;
+        }
+
+        .floating-heart:nth-child(5) {
+            left: 80%;
+            animation-delay: 3s;
+        }
+
+        .floating-heart:nth-child(6) {
+            left: 93%;
+            animation-delay: 5s;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 25px;
+
+            text-align: center;
+
+            color: #777777;
+
+            font-size: 14px;
+
+            border-top: 1px solid #24101a;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 18px 5%;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .gift-page {
+                padding: 60px 18px;
+            }
+
+            .heading h1 {
+                font-size: 43px;
+            }
+
+            .heading p {
+                font-size: 15px;
+            }
+
+            .gift-box {
+                transform: scale(0.9);
+            }
+
+            .gift-box:hover {
+                transform: scale(0.95);
+            }
+
+            .message-card {
+                padding: 35px 22px;
+            }
+
+            .message-card h2 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="floating-heart">♡</div>
+    <div class="floating-heart">♡</div>
+    <div class="floating-heart">♡</div>
+    <div class="floating-heart">♡</div>
+    <div class="floating-heart">♡</div>
+    <div class="floating-heart">♡</div>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            For Samra ♡
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="duas.html">
+                Duas
+            </a>
+
+            <a href="gift.html" class="active">
+                Gift 🎁
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="gift-page">
+
+
+        <!-- HEADING -->
+
+        <section class="heading">
+
+            <div class="small-title">
+                ONE LAST SURPRISE
+            </div>
+
+            <h1>
+                Your Birthday
+                <span>Gift</span> 🎁
+            </h1>
+
+            <p>
+                Something small, but made especially for you.
+            </p>
+
+        </section>
+
+
+        <!-- GIFT -->
+
+        <section class="gift-area" id="giftArea">
+
+            <div class="gift-box" id="giftBox">
+
+                <div class="bow">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+
+                </div>
+
+                <div class="box-lid"></div>
+
+                <div class="box-body">
+
+                    <div class="ribbon-vertical"></div>
+
+                    <div class="ribbon-horizontal"></div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="open-btn"
+                id="openGift"
+                type="button">
+
+                Open Your Gift 🎁
+
+            </button>
+
+        </section>
+
+
+        <!-- HIDDEN MESSAGE -->
+
+        <section
+            class="hidden-message"
+            id="hiddenMessage">
+
+            <div class="message-card">
+
+                <div class="heart">
+                    ♡
+                </div>
+
+                <h2>
+                    Happy 16th Birthday,
+                    <span>Samra!</span>
+                </h2>
+
+                <p>
+                    I hope this little surprise
+                    brought a smile to your face today.
+                </p>
+
+                <p>
+                    May this new chapter of your life
+                    be filled with happiness, peace,
+                    success and beautiful memories.
+                </p>
+
+                <p>
+                    May Allah always protect you,
+                    guide you towards what is best
+                    and bless your life with countless
+                    beautiful moments.
+                </p>
+
+                <p class="final-message">
+                    Keep smiling and keep shining. ♡
+                </p>
+
+                <div class="cake">
+                    🎂
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACK -->
+
+        <a
+            href="index.html"
+            class="back-btn">
+
+            ← Back to Home
+
+        </a>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        Made with ♡ for Samra
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const openGift =
+            document.getElementById("openGift");
+
+        const giftBox =
+            document.getElementById("giftBox");
+
+        const giftArea =
+            document.getElementById("giftArea");
+
+        const hiddenMessage =
+            document.getElementById("hiddenMessage");
+
+
+        openGift.addEventListener(
+            "click",
+            function () {
+
+                /* Open the box */
+
+                giftBox.classList.add("opened");
+
+
+                /* Hide button */
+
+                openGift.style.display = "none";
+
+
+                /*
+                    Wait for opening animation,
+                    then show message
+                */
+
+                setTimeout(
+                    function () {
+
+                        giftArea.style.minHeight = "auto";
+
+                        hiddenMessage.classList.add("show");
+
+                        createHearts();
+
+                    },
+                    700
+                );
+
+            }
+        );
+
+
+        /* =========================
+           EXTRA HEARTS
+        ========================= */
+
+        function createHearts() {
+
+            for (let i = 0; i < 20; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.innerHTML = "♡";
+
+                heart.style.position = "fixed";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.top = "-20px";
+
+                heart.style.color = "#ff5c9a";
+
+                heart.style.fontSize =
+                    (15 + Math.random() * 20) + "px";
+
+                heart.style.zIndex = "9999";
+
+                heart.style.pointerEvents = "none";
+
+                heart.style.transition =
+                    "transform 2.5s ease, opacity 2.5s ease";
+
+                document.body.appendChild(heart);
+
+
+                setTimeout(function () {
+
+                    heart.style.transform =
+                        "translateY(" +
+                        (window.innerHeight + 100) +
+                        "px) rotate(360deg)";
+
+                    heart.style.opacity = "0";
+
+                }, 50);
+
+
+                setTimeout(function () {
+
+                    heart.remove();
+
+                }, 2700);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

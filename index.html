@@ -1,0 +1,785 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Happy Birthday Samra ♡</title>
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    #35121f 0%,
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 90%,
+                    #260d18 0%,
+                    transparent 30%
+                ),
+
+                #080808;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+
+            width: 100%;
+
+            padding: 20px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            background:
+                rgba(8, 8, 8, 0.96);
+
+            border-bottom:
+                1px solid #3d1726;
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+
+        .logo {
+
+            color: #ff5c9a;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+
+            color: #dddddd;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links a.active {
+
+            color: #ff5c9a;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height:
+                calc(100vh - 75px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hero-content {
+
+            width: 100%;
+
+            max-width: 850px;
+        }
+
+
+        /* =========================
+           SMALL TITLE
+        ========================= */
+
+        .small-title {
+
+            color: #ff5c9a;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           MAIN HEADING
+        ========================= */
+
+        .hero h1 {
+
+            color: #ffffff;
+
+            font-size:
+                clamp(48px, 8vw, 85px);
+
+            line-height: 1.05;
+
+            margin: 0;
+        }
+
+
+        .hero h1 span {
+
+            color: #ff5c9a;
+
+            display: block;
+        }
+
+
+        /* =========================
+           AGE CIRCLE
+        ========================= */
+
+        .age {
+
+            width: 125px;
+
+            height: 125px;
+
+            margin: 35px auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #111111;
+
+            border:
+                3px solid #ff5c9a;
+
+            box-shadow:
+                0 12px 35px
+                rgba(255, 92, 154, 0.18);
+
+            transition: 0.3s;
+        }
+
+
+        .age:hover {
+
+            transform: scale(1.05);
+
+            box-shadow:
+                0 15px 45px
+                rgba(255, 92, 154, 0.28);
+        }
+
+
+        .age-number {
+
+            font-size: 50px;
+
+            font-weight: bold;
+
+            color: #ff5c9a;
+        }
+
+
+        .age-text {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #aaaaaa;
+        }
+
+
+        /* =========================
+           INTRO TEXT
+        ========================= */
+
+        .intro {
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            font-size: 21px;
+
+            line-height: 1.7;
+
+            color: #ffffff;
+        }
+
+
+        .message {
+
+            max-width: 650px;
+
+            margin: 18px auto 0;
+
+            color: #b8b8b8;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            padding:
+                14px 27px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            display: inline-block;
+        }
+
+
+        /* PINK BUTTON */
+
+        .pink-btn {
+
+            color: #ffffff;
+
+            background: #ff4f91;
+
+            border:
+                2px solid #ff4f91;
+
+            box-shadow:
+                0 8px 25px
+                rgba(255, 79, 145, 0.22);
+        }
+
+
+        .pink-btn:hover {
+
+            background: #e93f7f;
+
+            border-color: #e93f7f;
+
+            transform:
+                translateY(-4px);
+        }
+
+
+        /* BLACK BUTTON */
+
+        .black-btn {
+
+            color: #ff5c9a;
+
+            background: #111111;
+
+            border:
+                2px solid #ff5c9a;
+        }
+
+
+        .black-btn:hover {
+
+            color: #ffffff;
+
+            background: #ff5c9a;
+
+            transform:
+                translateY(-4px);
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -40px;
+
+            color: #ff5c9a;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+            animation:
+                floatUp 8s linear infinite;
+        }
+
+
+        .heart:nth-child(1) {
+
+            left: 10%;
+
+            animation-delay: 0s;
+        }
+
+
+        .heart:nth-child(2) {
+
+            left: 25%;
+
+            animation-delay: 2s;
+        }
+
+
+        .heart:nth-child(3) {
+
+            left: 45%;
+
+            animation-delay: 4s;
+        }
+
+
+        .heart:nth-child(4) {
+
+            left: 65%;
+
+            animation-delay: 1s;
+        }
+
+
+        .heart:nth-child(5) {
+
+            left: 80%;
+
+            animation-delay: 3s;
+        }
+
+
+        .heart:nth-child(6) {
+
+            left: 92%;
+
+            animation-delay: 5s;
+        }
+
+
+        @keyframes floatUp {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+
+            15% {
+
+                opacity: 1;
+            }
+
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #777777;
+
+            font-size: 14px;
+
+            border-top:
+                1px solid #24101a;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+
+                padding:
+                    18px 5%;
+
+                flex-direction:
+                    column;
+
+                gap: 15px;
+            }
+
+
+            .nav-links {
+
+                gap: 18px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 14px;
+            }
+
+
+            .hero {
+
+                padding:
+                    50px 18px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 48px;
+            }
+
+
+            .intro {
+
+                font-size: 18px;
+            }
+
+
+            .message {
+
+                font-size: 15px;
+            }
+
+
+            .age {
+
+                width: 110px;
+
+                height: 110px;
+            }
+
+
+            .age-number {
+
+                font-size: 42px;
+            }
+
+
+            .buttons {
+
+                flex-direction:
+                    column;
+
+                align-items: center;
+            }
+
+
+            .btn {
+
+                width: 220px;
+
+                text-align: center;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         FLOATING HEARTS
+    ========================= -->
+
+    <div class="heart">♡</div>
+
+    <div class="heart">♡</div>
+
+    <div class="heart">♡</div>
+
+    <div class="heart">♡</div>
+
+    <div class="heart">♡</div>
+
+    <div class="heart">♡</div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            For Samra ♡
+        </div>
+
+
+        <div class="nav-links">
+
+            <a
+                href="index.html"
+                class="active"
+            >
+                Home
+            </a>
+
+
+            <a href="duas.html">
+                Duas
+            </a>
+
+
+            <a href="gift.html">
+                Gift 🎁
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN HERO
+    ========================= -->
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+
+            <p class="small-title">
+                A SPECIAL DAY FOR A SPECIAL PERSON
+            </p>
+
+
+            <h1>
+
+                Happy Birthday
+
+                <span>
+                    Samra
+                </span>
+
+            </h1>
+
+
+            <!-- AGE -->
+
+            <div class="age">
+
+                <div class="age-number">
+                    16
+                </div>
+
+                <div class="age-text">
+                    YEARS
+                </div>
+
+            </div>
+
+
+            <!-- INTRO -->
+
+            <p class="intro">
+
+                Today is not just another day...
+
+                It's the day a beautiful soul
+                came into this world.
+
+            </p>
+
+
+            <!-- MESSAGE -->
+
+            <p class="message">
+
+                May your 16th birthday be filled
+                with happiness, beautiful memories,
+                endless smiles and lots of blessings. ♡
+
+            </p>
+
+
+            <!-- BUTTONS -->
+
+            <div class="buttons">
+
+
+                <a
+                    href="duas.html"
+                    class="btn pink-btn"
+                >
+                    Read Duas 🤍
+                </a>
+
+
+                <a
+                    href="gift.html"
+                    class="btn black-btn"
+                >
+                    Your Gift 🎁
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        Made with ♡ for Samra
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        console.log(
+            "Birthday website loaded successfully ♡"
+        );
+
+    </script>
+
+
+</body>
+
+</html>
+```
+sssssssssssss

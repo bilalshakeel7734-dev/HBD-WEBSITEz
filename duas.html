@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Duas For Samra ♡</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(circle at 10% 10%, #35121f 0%, transparent 30%),
+                radial-gradient(circle at 90% 90%, #260d18 0%, transparent 30%),
+                #080808;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            padding: 20px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(8, 8, 8, 0.95);
+
+            border-bottom: 1px solid #3d1726;
+
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ff5c9a;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #dddddd;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff5c9a;
+        }
+
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+
+        .page {
+            min-height: calc(100vh - 75px);
+
+            padding: 75px 7%;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .heading {
+            max-width: 750px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .small-title {
+            color: #ff5c9a;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+        .heading h1 {
+            font-size: clamp(42px, 7vw, 70px);
+
+            line-height: 1.1;
+
+            color: #ffffff;
+
+            margin-bottom: 20px;
+        }
+
+        .heading h1 span {
+            color: #ff5c9a;
+        }
+
+        .heading p {
+            color: #b9b9b9;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           DUA CARDS
+        ========================= */
+
+        .dua-container {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .dua-card {
+            background: #111111;
+
+            border: 1px solid #3d1726;
+
+            border-radius: 25px;
+
+            padding: 35px 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.35);
+
+            transition: 0.3s;
+        }
+
+        .dua-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #ff5c9a;
+
+            box-shadow:
+                0 15px 40px rgba(255, 92, 154, 0.12);
+        }
+
+
+        /* ICON */
+
+        .dua-icon {
+            width: 60px;
+            height: 60px;
+
+            margin: 0 auto 22px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #24101a;
+
+            border: 1px solid #572238;
+
+            color: #ff5c9a;
+
+            font-size: 27px;
+        }
+
+
+        .dua-card h2 {
+            color: #ffffff;
+
+            font-size: 23px;
+
+            margin-bottom: 15px;
+        }
+
+        .dua-card p {
+            color: #b7b7b7;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           BOTTOM MESSAGE
+        ========================= */
+
+        .bottom {
+            max-width: 700px;
+
+            margin: 55px auto 0;
+
+            text-align: center;
+        }
+
+        .bottom p {
+            color: #a9a9a9;
+
+            font-style: italic;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            color: #ffffff;
+
+            background: #ff4f91;
+
+            border: 2px solid #ff4f91;
+
+            box-shadow:
+                0 8px 25px rgba(255, 79, 145, 0.2);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            background: #e93f7f;
+
+            border-color: #e93f7f;
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .heart {
+            position: fixed;
+
+            bottom: -40px;
+
+            color: #ff5c9a;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+            animation: floatHeart 8s linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 24%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 43%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 64%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(5) {
+            left: 81%;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(6) {
+            left: 93%;
+            animation-delay: 5s;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 25px;
+
+            text-align: center;
+
+            color: #777777;
+
+            font-size: 14px;
+
+            border-top: 1px solid #24101a;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 18px 5%;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .page {
+                padding: 60px 18px;
+            }
+
+            .heading h1 {
+                font-size: 43px;
+            }
+
+            .heading p {
+                font-size: 15px;
+            }
+
+            .dua-container {
+                grid-template-columns: 1fr;
+            }
+
+            .dua-card {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Floating Hearts -->
+
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            For Samra ♡
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="duas.html" class="active">
+                Duas
+            </a>
+
+            <a href="gift.html">
+                Gift 🎁
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main -->
+
+    <main class="page">
+
+
+        <section class="heading">
+
+            <div class="small-title">
+                A FEW HEARTFELT PRAYERS
+            </div>
+
+            <h1>
+                Duas For
+                <span>Samra</span> ♡
+            </h1>
+
+            <p>
+                May Allah bless every step of your life
+                and fill your future with happiness,
+                peace and success.
+            </p>
+
+        </section>
+
+
+        <!-- Dua Cards -->
+
+        <section class="dua-container">
+
+
+            <div class="dua-card">
+
+                <div class="dua-icon">
+                    ♡
+                </div>
+
+                <h2>
+                    For Happiness
+                </h2>
+
+                <p>
+                    May Allah always keep a smile on your face,
+                    fill your heart with peace and give you
+                    countless reasons to be happy.
+                </p>
+
+            </div>
+
+
+            <div class="dua-card">
+
+                <div class="dua-icon">
+                    ✦
+                </div>
+
+                <h2>
+                    For Your Future
+                </h2>
+
+                <p>
+                    May Allah make your future bright,
+                    guide you towards what is best for you
+                    and help you achieve your dreams.
+                </p>
+
+            </div>
+
+
+            <div class="dua-card">
+
+                <div class="dua-icon">
+                    ♡
+                </div>
+
+                <h2>
+                    For Your Life
+                </h2>
+
+                <p>
+                    May Allah protect you from every difficulty,
+                    surround you with good people and bless
+                    you with a beautiful life.
+                </p>
+
+            </div>
+
+
+            <div class="dua-card">
+
+                <div class="dua-icon">
+                    ✦
+                </div>
+
+                <h2>
+                    For Your Dreams
+                </h2>
+
+                <p>
+                    May every good dream in your heart become
+                    a beautiful reality and may Allah give you
+                    success in everything you do.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- Bottom -->
+
+        <div class="bottom">
+
+            <p>
+                "May Allah make your coming years
+                even more beautiful than the years behind you."
+            </p>
+
+            <a href="gift.html" class="btn">
+                There's Something For You 🎁
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <footer>
+        Made with ♡ for Samra
+    </footer>
+
+
+    <script>
+        console.log("Duas page loaded successfully ♡");
+    </script>
+
+</body>
+</html>
